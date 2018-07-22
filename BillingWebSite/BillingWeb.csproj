@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\BillingWebSite\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\BillingWebSite\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\..\BillingWebSite\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\BillingWebSite\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0C00D8B-1514-4307-B67A-6FED7F16923F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BillingWebSite</RootNamespace>
+    <AssemblyName>BillingWebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BillingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TaxesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="GetAll_DeliveryMode_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_DeliveryNote_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_Inventory_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_Invoice_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_PaymentMode_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_ProductCategory_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_ProductSubCategoryWithProductCategory_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_ProductSubCategory_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_Product_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_Quotation_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_Size_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_Stock_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_Tax_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAll_Unit_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Get_Product_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Models\Globals.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_GetMonthlyInventoryReprot_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetMonthlyInvoiceReprot_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetMonthlytblDeliveryNoteReport_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_GetMonthlytblQuotationReport_Result.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="tblDeliveryMode.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDeliveryNote.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDeliveryNoteItem.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInventory.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInventoryItem.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInvoice.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInvoiceItem.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMeasurementUnit.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPaymentMode.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProduct.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProductCategory.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProductSubCategory.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblQuotation.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblQuotationItem.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRole.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSize.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStock.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTax.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUnit.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUser.cs">
+      <DependentUpon>BillingModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BillingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BillingModel.edmx</DependentUpon>
+      <LastGenOutput>BillingModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BillingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BillingModel.edmx</DependentUpon>
+      <LastGenOutput>BillingModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <EntityDeploy Include="BillingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BillingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="BillingModel.edmx.diagram">
+      <DependentUpon>BillingModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Welcome.cshtml" />
+    <Content Include="Views\Login\Contact.cshtml" />
+    <Content Include="Views\Taxes\Create.cshtml" />
+    <Content Include="Views\Taxes\Edit.cshtml" />
+    <Content Include="Views\Taxes\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ContactSuggestion">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\ContactSuggestion.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\..\..\Abhi\WebApp\ContactSuggestion\bin\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57076</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57076/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\BillingWebSite\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\BillingWebSite\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\BillingWebSite\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\BillingWebSite\packages\Microsoft.Net.Compilers.2.8.2\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
