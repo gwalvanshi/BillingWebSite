@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Auto detect text files and perform LF normalization
 * text=auto
 =======
+=======
+>>>>>>> parent of a67eebf... Add files via upload
 =======
 >>>>>>> parent of a67eebf... Add files via upload
 ###############################################################################
@@ -69,6 +72,9 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of a67eebf... Add files via upload
+=======
 >>>>>>> parent of a67eebf... Add files via upload
 =======
 >>>>>>> parent of a67eebf... Add files via upload
