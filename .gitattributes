@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Auto detect text files and perform LF normalization
 * text=auto
 =======
+=======
+>>>>>>> parent of a67eebf... Add files via upload
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
@@ -65,4 +68,7 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+<<<<<<< HEAD
+>>>>>>> parent of a67eebf... Add files via upload
+=======
 >>>>>>> parent of a67eebf... Add files via upload
